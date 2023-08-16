@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'Helvetica';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./helvetica_regular.woff2') format('woff2'),
+    url('./helvetica_regular.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'Helvetica';
+  font-style: bold;
+  font-weight: 700;
+  font-display: swap;
+  src: url('./helvetica_bold.woff2') format('woff2'),
+    url('./helvetica_bold.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'PassionOne';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('./PassionOne-Regular.woff2') format('woff2'),
+    url('./PassionOne-Regular.woff') format('woff');
+}
