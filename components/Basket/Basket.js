@@ -4,9 +4,9 @@ const Basket = () => {
 
   return(
     <div className={styles.basket}>
-      <p>Корзина</p>
-      <p>2 астероида</p>
-      <button></button>
+      <p className={styles.basket__title}>Корзина</p>
+      <p className={styles.basket__subtitle}>2 астероида</p>
+      <button className={styles.basket__button}>Отправить</button>
     </div>
   )
 }
