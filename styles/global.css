@@ -1,0 +1,16 @@
+@import url('../vendor/normalize.css');
+@import url('../vendor/fonts/fonts.css');
+
+body {
+  min-height: 100vh;
+  font-family: 'Helvetica', Arial, sans-serif;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  background-color: #000;
+  color: #fff;
+  margin: 0 auto;
+  background-image: url('../images/eath.png');
+  background-repeat: no-repeat;
+  background-position-y: center;
+  margin: 17px 16px;
+}
