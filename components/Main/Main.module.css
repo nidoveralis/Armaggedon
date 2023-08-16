@@ -1,0 +1,45 @@
+
+.asteroids {
+  grid-row: 2/3;
+  grid-column: 2/3;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-left: 70px;
+}
+
+.asteroids__title {
+  font-weight: 700;
+  font-size: 28px;
+  line-height: 36px;
+  margin: 0 0 9px;
+}
+
+.asteroids__subtitle {
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  margin: 0;
+}
+
+.asteroids__subtitle_line {
+  font-weight: 400;
+  position: relative;
+}
+
+.asteroids__subtitle_line::after {
+  position: absolute;
+  content: '';
+  background-color: #fff;
+  height: 1px;
+  width: 133px;
+  top: 18px;
+  left: 0;
+}
+
+.asteroids__list {
+  padding: 0;
+  list-style-type: none;
+  margin-top: 23px;
+  
+}
