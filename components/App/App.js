@@ -3,12 +3,11 @@ import Header from '../Header/Header';
 import Main from '../Main/Main';
 import Basket from '../Basket/Basket';
 
-const App = () => {
-
+const App = ({data}) => {
   return(
     <div className={styles.page}>
       <Header />
-      <Main />
+      <Main data={data} />
       <Basket />
     </div>
   )
