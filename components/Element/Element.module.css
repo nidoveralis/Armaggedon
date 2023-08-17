@@ -46,7 +46,7 @@
   line-height: 24px;
 }
 
-.element__size {
+.element__diameter {
   font-weight: 400;
   font-size: 12px;
   line-height: 16px;
@@ -60,7 +60,6 @@
 .element__button {
   border: none;
   background-color: rgba(248, 102, 0, .15);
-  color: rgb(248, 102, .1);
   width: 90px;
   height: 24px;
   font-weight: 700;
@@ -74,6 +73,11 @@
   padding: 0;
   margin-top: 11px;
   letter-spacing: 1px;
+  color: rgb(248, 102, .1);
+}
+
+.element__button_active{
+  color:rgba(245, 222, 217, 1)
 }
 
 .element__danger {
