@@ -21,31 +21,46 @@
 }
 
 .asteroids__measurein {
-  font-weight: 700;
+  color: #fff;
+  padding: 0;
   font-size: 16px;
-  line-height: 24px;
   margin-right: 4px;
   cursor: pointer;
+  border: none;
+  background-color: transparent;
 }
 
-.asteroids__subtitle_active {
+.asteroids__measurein_active {
+  font-weight: 700;
+  line-height: 24px;
+  border: none;
+  border-bottom: none;
+}
+
+.asteroids__measurein_off {
+  border-bottom: 1px solid #fff;
+  line-height: 15px;
   font-weight: 400;
-  position: relative;
-}
-
-.asteroids__subtitle_line::after {
-  position: absolute;
-  content: '';
-  background-color: #fff;
-  height: 1px;
-  width: 133px;
-  top: 18px;
-  left: 0;
+  margin-right: 11px;
 }
 
 .asteroids__list {
   padding: 0;
   list-style-type: none;
   margin-top: 23px;
-  
+}
+
+.line {
+  position: relative;
+  margin-right: 9px;
+}
+
+.line::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background-color: #fff;
+  height: 12px;
+  top: -6px;
+  left: 1px;
 }

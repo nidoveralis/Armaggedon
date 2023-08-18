@@ -23,9 +23,10 @@ export const getStaticProps = async () => {
 
 const Index = ({data}) => {
 
+
   return(
     <div>
-      <App data={data} />
+      <App data={data[startDate]} />
     </div>
   )
 }

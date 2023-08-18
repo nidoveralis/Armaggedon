@@ -1,7 +1,11 @@
+import Main from "../components/Main/Main";
+
 const BasKet = () => {
 
   return(
-    <div>BasKet</div>
+    <div>
+      <Main />
+    </div>
   )
 }
 

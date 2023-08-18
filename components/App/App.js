@@ -4,6 +4,8 @@ import Main from '../Main/Main';
 import Basket from '../Basket/Basket';
 
 const App = ({data}) => {
+  const myOrder = [];
+
   return(
     <div className={styles.page}>
       <Header />
