@@ -1,12 +1,12 @@
 import Main from "../components/Main/Main";
 
-const BasKet = () => {
+const BasKetPage = () => {
 
   return(
     <div>
-      <Main />
+      <h1>hhhhhhhh</h1>
     </div>
   )
 }
 
-export default BasKet;
+export default BasKetPage;

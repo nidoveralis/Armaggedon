@@ -1,12 +1,17 @@
+import Link from 'next/link';
 import styles from './Basket.module.css';
+import BasKetPage from '../../pages/basket';
 
-const Basket = () => {
+const Basket = ({data} ) => {
 
   return(
     <div className={styles.basket}>
+
       <p className={styles.basket__title}>Корзина</p>
       <p className={styles.basket__subtitle}>2 астероида</p>
-      <button className={styles.basket__button}>Отправить</button>
+      <Link href='/basket' className={styles.basket__button}>
+        Отправить
+      </Link>
     </div>
   )
 }
