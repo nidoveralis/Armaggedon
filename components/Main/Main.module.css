@@ -64,3 +64,10 @@
   top: -6px;
   left: 1px;
 }
+
+.main__img {
+  position: fixed;
+  z-index: -1;
+  top: 138px;
+  left: 0;
+}
