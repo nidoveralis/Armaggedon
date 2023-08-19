@@ -1,10 +1,14 @@
-import Main from "../components/Main/Main";
+import React, {useState} from 'react';
+import Main from '../components/Main/Main';
+import { CurrentBasketContext } from '../contexts/CurrentBasketContext';
+
 
 const BasKetPage = () => {
 
-  return(
+
+  return (
     <div>
-      <h1>hhhhhhhh</h1>
+      <Main data={[]}/>
     </div>
   )
 }

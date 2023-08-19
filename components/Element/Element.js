@@ -3,7 +3,7 @@ import Astro from '../../images/astro.png';
 import NextImage from 'next/image';
 import styles from './Element.module.css';
 
-const Element = ({el, metricKilometers, makeOrder}) => {
+const Element = ({el, metricKilometers, addToBasket}) => {
   //estimated_diameter.kilometers.estimated_diameter_max
   const [orderStatus,setOrderStatus] = useState(el.order ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ')
 
@@ -24,7 +24,7 @@ const Element = ({el, metricKilometers, makeOrder}) => {
  const distanceLunar = `${distanceElement.lunar} ${distanceElement.lunar%100 > 4 ? 'лунныx орбит' : 'лунные орбиты'}`;
 
  function handleClick() {
-  makeOrder(el);
+  addToBasket(el);
   el.order=true;
   setOrderStatus('В КОРЗИНЕ')
  };

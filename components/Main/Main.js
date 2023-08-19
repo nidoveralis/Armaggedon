@@ -8,17 +8,13 @@ const startDate = '2023-09-12'
 
 
 
-const Main = ({data}) => {
+const Main = ({data, addToBasket}) => {
 
   const [metricKilometers,setMetricKilometers] = useState(true);
 
   function handleClickMeasurement() {
     setMetricKilometers(!metricKilometers);
   };
-
-  function makeOrder(el) {
-    console.log(data)
-  }
 
   return(
     <div className={styles.asteroids} >
@@ -32,7 +28,7 @@ const Main = ({data}) => {
       <ul className={styles.asteroids__list}>
       {data.map(el=> (
         
-          <Element key = {el.id} el={el} metricKilometers={metricKilometers} makeOrder={makeOrder} />
+          <Element key = {el.id} el={el} metricKilometers={metricKilometers} addToBasket={addToBasket} />
         ))}
       </ul>
   </div>
