@@ -1,20 +1,19 @@
 import React, {useState} from 'react';
-import Main from '../components/Main/Main';
-import { useSelector } from 'react-redux';
+import { Provider } from 'react-redux';
+import store from '../store';
+import Order from '../components/Order/Order';
 
 
-const BasKetPage = () => {
 
-  const a = useSelector(state=>state.astro.basket);
-
-  console.log(a)
-
+const BasketPage = () => {
 
   return (
-    <div>
-      <h1>fmjfjfjfj</h1>
-    </div>
+    <Provider store={store}>
+      <div>
+        <Order />
+      </div>
+    </Provider>
   )
 }
 
-export default BasKetPage;
+export default BasketPage;

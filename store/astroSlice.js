@@ -7,7 +7,7 @@ const astroSlice=createSlice({
   },
   reducers: {
     addInBasket(state,action) {
-      console.log(action, state)
+     // console.log(action, state)
       state.basket.push(action.payload.el)
     }
   }

@@ -1,16 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
+import { useSelector } from 'react-redux';
 import NextImage from 'next/image';
 import EathImg from '../../images/eath.png';
 import styles from './Main.module.css';
 import Element from '../Element/Element';
 
-const startDate = '2023-09-12'
-
-
 
 const Main = ({data}) => {
 
   const [metricKilometers,setMetricKilometers] = useState(true);
+  const basket = useSelector(state=>state.astro.basket);
+
 
   function handleClickMeasurement() {
     setMetricKilometers(!metricKilometers);
@@ -27,7 +27,6 @@ const Main = ({data}) => {
       </div>
       <ul className={styles.asteroids__list}>
       {data.map(el=> (
-        
           <Element key = {el.id} el={el} metricKilometers={metricKilometers} />
         ))}
       </ul>

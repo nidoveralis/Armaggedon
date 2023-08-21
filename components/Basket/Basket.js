@@ -1,17 +1,16 @@
 import Link from 'next/link';
-import React, {useState} from 'react';
+import { useSelector } from 'react-redux';
 import styles from './Basket.module.css';
 
-
 const Basket = () => {
-  const [countBug,setCountBug] = useState()
-  
+
+  const basketCount = useSelector(state=>state.astro.basket.length);
 
   return (
     <div className={styles.basket}>
 
       <p className={styles.basket__title}>Корзина</p>
-      <p className={styles.basket__subtitle}>{` астероидов`}</p>
+      <p className={styles.basket__subtitle}>{`${basketCount} астероидов`}</p>
       <Link href={'/basket'} className={styles.basket__button}>
         Отправить
       </Link>

@@ -1,18 +1,18 @@
 import {useState} from 'react';
-import Astro from '../../images/astro.png';
-import NextImage from 'next/image';
-import styles from './Element.module.css';
+import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
+import Link from 'next/link';
 import {addInBasket} from '../../store/astroSlice';
+import NextImage from 'next/image';
+import Astro from '../../images/astro.png';
+import styles from './Element.module.css';
+import { bigAstro, smallAstro,startDate } from '../../utils/constant';
 
 const Element = ({el, metricKilometers}) => {
 
   const dispatch = useDispatch();
-  const [orderStatus,setOrderStatus] = useState(el.order ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ')
-
-  const startDate = '2023-09-12'/////
-  const bigAstro = {width: '36', heigth: '40' }////
-  const smallAstro = {width: '22', heigth: '24'}////
+  const basket = useSelector(state=>state.astro.basket);
+  const [orderStatus,setOrderStatus] = useState(el.order ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ');
 
   const dang='⚠ Опасен';////
   
@@ -26,25 +26,38 @@ const Element = ({el, metricKilometers}) => {
  const distanceKl = `${distanceElement.kl.replace(/(\d{1,3}(?=(?:\d\d\d)+(?!\d)))/g, "$1" + ' ')} км`;
  const distanceLunar = `${distanceElement.lunar} ${distanceElement.lunar%100 > 4 ? 'лунныx орбит' : 'лунные орбиты'}`;
 
+ function formatDate(dateString) {
+  const months = [
+    'янвр', 'февр', 'март', 'апрл', 'май', 'июн',
+    'июл', 'авг', 'сент', 'октб', 'нояб', 'декб'
+  ];
+  const date = new Date(dateString);
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  
+  return `${day} ${month} ${year}`;
+};
+
  function handleClick() {
   el.order=true;
-  //addToBasket(el);
   dispatch(addInBasket({el}))
-  //el.order=true;
   setOrderStatus('В КОРЗИНЕ')
  };
 
  return(
     <li className={styles.element}>
-      <p className={styles.element__date}>{'12 сент 2023'}</p>
-      <div className={styles.element__info}>
-        <div className={styles.element__distance}>{metricKilometers ? distanceKl : distanceLunar}</div>
-        <NextImage src={Astro} className={styles.element__img} alt='Астероид' {...sizeElement} />
-        <div className={styles.element__description}>
-          <p className={styles.element__name}>{nameElement}</p>
-          <p className={styles.element__diameter}>{`Ø ${diametrElement} м`}</p>
+      <Link href={`/asteroids/${el.id}`} className={styles.link}>
+        <p className={styles.element__date}>{formatDate(el.close_approach_data[0].close_approach_date)}</p>
+        <div className={styles.element__info}>
+          <div className={styles.element__distance}>{metricKilometers ? distanceKl : distanceLunar}</div>
+          <NextImage src={Astro} className={styles.element__img} alt='Астероид' {...sizeElement} />
+          <div className={styles.element__description}>
+            <p className={styles.element__name}>{nameElement}</p>
+            <p className={styles.element__diameter}>{`Ø ${diametrElement} м`}</p>
+          </div>
         </div>
-      </div>
+      </Link>
       <button className={`${styles.element__button} ${el.order ? styles.element__button_active : ''}`} onClick={handleClick} disabled={el.order}  >{orderStatus}</button>
       <p className={styles.element__danger}>{el.is_potentially_hazardous_asteroid && dang}</p>
     </li>
