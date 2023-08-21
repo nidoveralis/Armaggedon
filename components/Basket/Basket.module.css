@@ -1,19 +1,11 @@
 .basket {
   background-color: rgba(35, 37, 38, 1);
-  border-radius: 24px;
-  -webkit-border-radius: 24px;
-  -moz-border-radius: 24px;
-  -ms-border-radius: 24px;
-  -o-border-radius: 24px;
   max-width: 150px;
-  max-height: 161px;
   display: flex;
-  flex-direction: column;
   align-items: start;
   line-height: 24px;
   position: fixed;
-  top: 15.8%;
-  right: 20.4%;
+  left: 68.5%;
   padding: 15px 17px;
 }
 
@@ -28,7 +20,6 @@
   font-size: 16px;
   font-weight: 400;
   display: inline-block;
-  margin: 1px 0 33px;
 }
 
 .basket__button {
@@ -45,4 +36,48 @@
   font-size: 16px;
   letter-spacing: .5px;
   text-decoration: none;
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+}
+
+
+@media screen and (min-width: 769px) {
+  .basket {
+    top: 15.8%;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+    max-height: 161px;
+    flex-direction: column;
+
+  }
+
+  .basket__subtitle {
+    margin: 1px 0 33px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .basket {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    min-width: 100vw;
+    max-height: 81px;
+    justify-content: space-between;
+  }
+
+  .basket__button {
+    align-self: flex-end;
+    margin-right: 32px;
+  }
+
+  .basket__subtitle {
+    margin: 0;
+  }
 }

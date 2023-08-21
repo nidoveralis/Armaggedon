@@ -8,9 +8,11 @@ const Basket = () => {
 
   return (
     <div className={styles.basket}>
+      <div  className={styles.text}>
+        <p className={styles.basket__title}>Корзина</p>
+        <p className={styles.basket__subtitle}>{`${basketCount} астероидов`}</p>
+      </div>
 
-      <p className={styles.basket__title}>Корзина</p>
-      <p className={styles.basket__subtitle}>{`${basketCount} астероидов`}</p>
       <Link href={'/basket'} className={styles.basket__button}>
         Отправить
       </Link>

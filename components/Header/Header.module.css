@@ -1,7 +1,6 @@
 .header {
-  width: 375px;
-  height: 123px;
-  grid-row: 1/2;
+  max-width: 375px;
+  max-height: 114px;
 }
 
 .header__title {
