@@ -1,14 +1,18 @@
 import React, {useState} from 'react';
 import Main from '../components/Main/Main';
-import { CurrentBasketContext } from '../contexts/CurrentBasketContext';
+import { useSelector } from 'react-redux';
 
 
 const BasKetPage = () => {
 
+  const a = useSelector(state=>state.astro.basket);
+
+  console.log(a)
+
 
   return (
     <div>
-      <Main data={[]}/>
+      <h1>fmjfjfjfj</h1>
     </div>
   )
 }

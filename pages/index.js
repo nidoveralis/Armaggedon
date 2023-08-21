@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { Provider } from 'react-redux';
+import store from '../store';
 import App from '../components/App/App';
-import { CurrentBasketContext } from '../contexts/CurrentBasketContext';
 
 const startDate = '2023-09-12'; // 
 const endDate = '2023-09-12'; //
@@ -27,18 +28,14 @@ export const getStaticProps = async () => {
 
 const Index = ({ data }) => {
 
-  const [myOrder, setMyOrder] = useState([]);
-
-  const addToBasket = (item) => {
-    setMyOrder((currentItems) => [...currentItems, item]);
-  };
+  
 
   return (
-    <CurrentBasketContext.Provider value={{ myOrder }}>
+    <Provider store={store}>
       <div>
-        <App data={data[startDate]} addToBasket={addToBasket} />
+        <App data={data[startDate]} />
       </div>
-    </CurrentBasketContext.Provider >
+    </Provider >
   )
 }
 

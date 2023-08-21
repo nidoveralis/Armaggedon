@@ -8,7 +8,7 @@ const startDate = '2023-09-12'
 
 
 
-const Main = ({data, addToBasket}) => {
+const Main = ({data}) => {
 
   const [metricKilometers,setMetricKilometers] = useState(true);
 
@@ -28,7 +28,7 @@ const Main = ({data, addToBasket}) => {
       <ul className={styles.asteroids__list}>
       {data.map(el=> (
         
-          <Element key = {el.id} el={el} metricKilometers={metricKilometers} addToBasket={addToBasket} />
+          <Element key = {el.id} el={el} metricKilometers={metricKilometers} />
         ))}
       </ul>
   </div>

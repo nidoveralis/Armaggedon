@@ -2,9 +2,12 @@ import {useState} from 'react';
 import Astro from '../../images/astro.png';
 import NextImage from 'next/image';
 import styles from './Element.module.css';
+import { useDispatch } from 'react-redux';
+import {addInBasket} from '../../store/astroSlice';
 
-const Element = ({el, metricKilometers, addToBasket}) => {
-  //estimated_diameter.kilometers.estimated_diameter_max
+const Element = ({el, metricKilometers}) => {
+
+  const dispatch = useDispatch();
   const [orderStatus,setOrderStatus] = useState(el.order ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ')
 
   const startDate = '2023-09-12'/////
@@ -24,8 +27,10 @@ const Element = ({el, metricKilometers, addToBasket}) => {
  const distanceLunar = `${distanceElement.lunar} ${distanceElement.lunar%100 > 4 ? 'лунныx орбит' : 'лунные орбиты'}`;
 
  function handleClick() {
-  addToBasket(el);
   el.order=true;
+  //addToBasket(el);
+  dispatch(addInBasket({el}))
+  //el.order=true;
   setOrderStatus('В КОРЗИНЕ')
  };
 
