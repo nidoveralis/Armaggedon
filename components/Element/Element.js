@@ -6,15 +6,13 @@ import {addInBasket} from '../../store/astroSlice';
 import NextImage from 'next/image';
 import Astro from '../../images/astro.png';
 import styles from './Element.module.css';
-import { bigAstro, smallAstro,startDate } from '../../utils/constant';
+import { bigAstro, smallAstro, dang } from '../../utils/constant';
 
 const Element = ({el, metricKilometers}) => {
 
   const dispatch = useDispatch();
   const basket = useSelector(state=>state.astro.basket);
-  const [orderStatus,setOrderStatus] = useState(el.order ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ');
-
-  const dang='⚠ Опасен';////
+  const [orderStatus,setOrderStatus] = useState(basket.some(arrayObj => el.id === arrayObj.id));
   
   const nameElement = [...(el.name.match(/\(.*?\)/g) || [])].map(s => s.slice(1, -1));
   const diametrElement = Math.floor(el.estimated_diameter.meters.estimated_diameter_max);
@@ -40,14 +38,13 @@ const Element = ({el, metricKilometers}) => {
 };
 
  function handleClick() {
-  el.order=true;
   dispatch(addInBasket({el}))
   setOrderStatus('В КОРЗИНЕ')
  };
 
  return(
     <li className={styles.element}>
-      <Link href={`/asteroids/${el.id}`} className={styles.link}>
+      <Link href={`/asteroids/${el.id}`} className={styles.link} data={el}>
         <p className={styles.element__date}>{formatDate(el.close_approach_data[0].close_approach_date)}</p>
         <div className={styles.element__info}>
           <div className={styles.element__distance}>{metricKilometers ? distanceKl : distanceLunar}</div>
@@ -58,7 +55,7 @@ const Element = ({el, metricKilometers}) => {
           </div>
         </div>
       </Link>
-      <button className={`${styles.element__button} ${el.order ? styles.element__button_active : ''}`} onClick={handleClick} disabled={el.order}  >{orderStatus}</button>
+      <button className={`${styles.element__button} ${orderStatus ? styles.element__button_active : ''}`} onClick={handleClick} disabled={orderStatus}  >{orderStatus ? 'В КОРЗИНЕ' : 'ЗАКАЗАТЬ'}</button>
       <p className={styles.element__danger}>{el.is_potentially_hazardous_asteroid && dang}</p>
     </li>
   )

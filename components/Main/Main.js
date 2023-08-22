@@ -9,8 +9,6 @@ import Element from '../Element/Element';
 const Main = ({data}) => {
 
   const [metricKilometers,setMetricKilometers] = useState(true);
-  const basket = useSelector(state=>state.astro.basket);
-
 
   function handleClickMeasurement() {
     setMetricKilometers(!metricKilometers);

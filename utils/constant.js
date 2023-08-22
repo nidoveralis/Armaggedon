@@ -10,9 +10,10 @@ function getTodayDate() {
 const bigAstro = {width: '36', heigth: '40' };
 const smallAstro = {width: '22', heigth: '24'};
 const startDate = getTodayDate();
-const endDate = '2023-09-12';
+const dang='&#9888; Опасен';
+const api_key = 'gjX3ndY5NQbyNkMqwR58egqxw3QptF2LZjeVGnn9';
 
-const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&end_date=${endDate}&api_key=DEMO_KEY`;
+const url = `https://api.nasa.gov/neo/rest/v1/feed?start_date=${startDate}&api_key=DEMO_KEY`;
 
-export {bigAstro,smallAstro,url};
-//gjX3ndY5NQbyNkMqwR58egqxw3QptF2LZjeVGnn9
+
+export {bigAstro,smallAstro,url, getTodayDate, dang};
