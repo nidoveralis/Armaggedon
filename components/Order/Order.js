@@ -9,12 +9,14 @@ const Order = () => {
   const basket = useSelector(state=>state.astro.basket);
 
   return (
+    <>
+      <Link href='/' className={styles.link} >
+        <Header />
+      </Link>
       <div className={styles.page}>
-        <Link href='/' className={styles.link} >
-          <Header />
-        </Link>
         <Main data={basket} />
-    </div>
+      </div>
+    </>
   )
 }
 

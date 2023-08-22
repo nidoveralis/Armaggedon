@@ -8,11 +8,13 @@ const App = ({data}) => {
 
 
   return(
+    <>
+    <Header />
     <div className={styles.page}>
-      <Header />
       <Main data={data} />
       <Basket />
     </div>
+    </>
   )
 }
 
