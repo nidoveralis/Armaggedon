@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import Asteroid from '../../components/Asteroud/Asteroid';
 
 export const getServerSideProps = async (context) => {
@@ -22,6 +23,9 @@ const Astro=({data})=> {
  
   return(
     <>
+        <Head>
+          <title>Armaggedon</title>
+        </Head>
       <Asteroid data={data} />
     </>
   )

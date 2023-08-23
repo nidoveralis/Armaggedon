@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { Provider } from 'react-redux';
 import store from '../store';
 import App from '../components/App/App';
@@ -31,6 +32,9 @@ const Index = ({ data }) => {
   return (
     <Provider store={store}>
       <div>
+        <Head>
+          <title>Armaggedon</title>
+        </Head>
         <App data={arr} />
       </div>
     </Provider >
