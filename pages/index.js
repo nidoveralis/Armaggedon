@@ -8,7 +8,6 @@ export const getStaticProps = async () => {
 
   const response = await fetch(url);
   const data = await response.json();
-
   if (!data) {
     return {
       notFound: true,
@@ -18,9 +17,11 @@ export const getStaticProps = async () => {
   return {
     props: { data: data.near_earth_objects },
   }
+  
 };
 
 const Index = ({ data }) => {
+  
   const arr = [];
   function flattenObject(){for (let key in data) {
     arr.push(...data[key])

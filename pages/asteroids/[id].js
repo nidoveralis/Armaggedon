@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import Asteroid from '../../components/Asteroud/Asteroid';
 
 export const getServerSideProps = async (context) => {
