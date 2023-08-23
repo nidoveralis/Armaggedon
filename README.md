@@ -14,3 +14,5 @@
 + Установите зависимости npm i
 + Запускаем проект — npm run dev
 + Перейдите по адресу http://localhost:3000/
+
+Или можете перейти по этой ссылке https://armaggedon-rose.vercel.app/
